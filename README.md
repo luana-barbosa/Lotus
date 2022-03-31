@@ -7,7 +7,7 @@
 - No detalhe do evento é importante exibir suas informações e compartilhamento.
 
 ### Passo a Passo 
-- Compila sem a necessidade de nenhum ajuste após ser clonado
+- Compila sem a necessidade de nenhum ajuste após ser clonado através da branch "master"
 - Suporte à API 19 e funcionar com a API mais recente do Android
 - Escrito em Kotlin
 
