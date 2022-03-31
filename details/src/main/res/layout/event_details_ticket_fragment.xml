@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/size_const_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context="com.example.details.ui.DetailsTicketFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/ui_space_size_16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/ui_space_size_16dp" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/color_app"
+        app:navigationIcon="@drawable/ic_event_arrow_back_24"
+        app:title="Lótus"
+        app:titleTextAppearance="@style/TextAppearance.H4" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="@dimen/ui_space_size_350dp"
+        android:layout_height="@dimen/ui_space_size_200dp"
+        android:layout_margin="@dimen/ui_space_size_5dp"
+        app:cardCornerRadius="@dimen/ui_radius_10dp"
+        app:layout_constraintBottom_toTopOf="@+id/backdrop_guideline"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <ImageView
+            android:id="@+id/backdrop_event"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ui_space_size_200dp"
+            android:background="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backdrop_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/ui_space_size_291dp" />
+
+    <TextView
+        android:id="@+id/title_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ui_space_size_16dp"
+        android:layout_marginEnd="@dimen/ui_space_size_16dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.P4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="@+id/backdrop_guideline"
+        tools:text="Feira de adoção de animais na Redenção" />
+
+    <ImageView
+        android:id="@+id/ic_date_event"
+        android:layout_width="@dimen/ui_space_size_20dp"
+        android:layout_height="@dimen/ui_space_size_20dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/ui_space_size_44dp"
+        android:layout_marginTop="@dimen/ui_space_size_20dp"
+        android:src="@drawable/ic_event_today_24"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/title_event" />
+
+    <TextView
+        android:id="@+id/date_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_space_size_20dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.P3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ic_date_event"
+        app:layout_constraintTop_toBottomOf="@+id/title_event"
+        tools:text="24/05/2022" />
+
+    <ImageView
+        android:id="@+id/ic_price_event"
+        android:layout_width="@dimen/ui_space_size_20dp"
+        android:layout_height="@dimen/ui_space_size_20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/ui_space_size_20dp"
+        android:src="@drawable/ic_event_price_24"
+        app:layout_constraintEnd_toStartOf="@+id/price_event"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/date_event"
+        app:layout_constraintTop_toBottomOf="@+id/title_event" />
+
+    <TextView
+        android:id="@+id/price_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_space_size_20dp"
+        android:layout_marginEnd="@dimen/ui_space_size_44dp"
+        android:textAppearance="@style/TextAppearance.P3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@+id/title_event"
+        tools:text="R$149.90" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ui_space_size_350dp"
+        android:layout_marginTop="@dimen/ui_space_size_68dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_event"
+        app:layout_constraintVertical_bias="0.017">
+
+        <TextView
+            android:id="@+id/overview_event"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/ui_space_size_16dp"
+            android:layout_marginEnd="@dimen/ui_space_size_16dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.P2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/title_event"
+            tools:text="Vamos ajudar !!\n\nSe você tem na sua casa roupas que estão em bom estado de uso e não sabemos que fazer, coloque aqui na nossa página sua cidade e sua doação, com certeza poderá ajudar outras pessoas que estão passando por problemas econômicos no momento!!\n\nAjudar não faz mal a ninguém!!!\n" />
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
