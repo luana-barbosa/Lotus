@@ -9,12 +9,15 @@ import com.example.details.domain.usecase.GetTicketInfoUseCase
 import com.example.network.response.Output
 import kotlinx.coroutines.launch
 
-class DetailsTicketViewModel (private val getTicketInfoUseCase: GetTicketInfoUseCase) : ViewModel() {
+class DetailsTicketViewModel(
+    private val getTicketInfoUseCase: GetTicketInfoUseCase
+    ) : ViewModel() {
     private val ticketInfo = MutableLiveData<Output<TicketDetails>>()
+
     val ticketDetailsInfo: LiveData<Output<TicketDetails>>
         get() = ticketInfo
 
-    fun loadTicketInfo(ticketId : String) {
+    fun loadTicketInfo(ticketId: String) {
         viewModelScope.launch {
             val info = getTicketInfoUseCase(ticketId)
 
